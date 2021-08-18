@@ -320,6 +320,7 @@ function join(channel) {
 		var command = COMMANDS[cmd];
 		command.call(null, args);
 	}
+	pushMessage({ nick: '*', text: "正在连接到服务器，请稍等. . ." });
 }
 
 var COMMANDS = {
@@ -495,7 +496,7 @@ function updateTitle() {
 	if (myChannel) {
 		title = "?" + myChannel;
 	} else {
-		title = "hack.chat";
+		title = "simple-IRC-client";
 	}
 
 	if (unread > 0) {
